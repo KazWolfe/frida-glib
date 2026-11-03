@@ -467,6 +467,12 @@ g_system_thread_new (GThreadFunc proxy,
   return (GRealThread *) thread;
 }
 
+G_GNUC_WEAK gpointer
+g_thread_get_system_entrypoint (void)
+{
+  return NULL;
+}
+
 G_GNUC_WEAK void
 g_thread_yield (void)
 {

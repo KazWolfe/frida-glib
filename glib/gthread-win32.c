@@ -587,6 +587,12 @@ error:
   }
 }
 
+gpointer
+g_thread_get_system_entrypoint (void)
+{
+  return (gpointer) g_thread_win32_proxy;
+}
+
 G_ALWAYS_INLINE static inline void
 g_thread_yield_impl (void)
 {

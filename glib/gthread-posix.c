@@ -889,6 +889,22 @@ g_system_thread_new (GThreadFunc proxy,
   return (GRealThread *) thread;
 }
 
+/**
+ * g_thread_get_system_entrypoint:
+ *
+ * Gets the routine that GLib hands to the system when creating a thread,
+ * which is what the system reports as the start routine of every #GThread.
+ *
+ * Returns: (nullable): the routine, or %NULL if unknown
+ *
+ * Since: 2.86
+ */
+gpointer
+g_thread_get_system_entrypoint (void)
+{
+  return (gpointer) g_thread_proxy;
+}
+
 G_ALWAYS_INLINE static inline void
 g_thread_yield_impl (void)
 {

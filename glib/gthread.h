@@ -197,6 +197,8 @@ void            g_thread_yield                  (void);
 
 GLIB_AVAILABLE_IN_2_84
 const char *    g_thread_get_name               (GThread        *thread);
+GLIB_AVAILABLE_IN_2_86
+gpointer        g_thread_get_system_entrypoint  (void);
 GLIB_AVAILABLE_IN_2_68
 GSystemThread * _g_system_thread_create         (gulong          stack_size,
                                                  const char     *name,
